@@ -2,7 +2,22 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
     event.preventDefault();
 
     const amountInput = document.getElementById('amount-input').value;
-    console.log(amountInput);
+   
+    const parseAmountInput = parseFloat(amountInput);
+
+    const accountBalance = document.getElementById('account-balance').innerText;
+
+    const parseAccountBalance = parseFloat(accountBalance);
+
     const pinInput = document.getElementById('pin-input').value;
-    console.log(pinInput);
+
+    if(pinInput === '1234'){
+        const newAccountBalance = parseAmountInput + parseAccountBalance;
+
+        document.getElementById('account-balance').innerText = newAccountBalance;
+    }
+    else{
+        alert('Failed to add Money. Please try again kindly sire!')
+    }
+    
 })
